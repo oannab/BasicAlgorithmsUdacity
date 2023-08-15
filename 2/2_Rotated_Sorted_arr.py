@@ -54,8 +54,12 @@ def linear_search(input_list, number): # Time complexity - linear search - O(n),
 def test_function(test_case): # Time - O(n), n is the length of the input list given by the linear_search() + rottaed_array_search
     input_list = test_case[0]
     number = test_case[1]
+
     if linear_search(input_list, number) == rotated_array_search(input_list, number):
-        print("Pass")
+        if linear_search(input_list, number) == -1:
+            print("Number not found") # the number was correctly not found in the array
+        else:
+            print("Pass")    
     else:
         print("Fail")
 
@@ -63,4 +67,12 @@ test_function([[6, 7, 8, 9, 10, 1, 2, 3, 4], 6])
 test_function([[6, 7, 8, 9, 10, 1, 2, 3, 4], 1])
 test_function([[6, 7, 8, 1, 2, 3, 4], 8])
 test_function([[6, 7, 8, 1, 2, 3, 4], 1])
-test_function([[6, 7, 8, 1, 2, 3, 4], 10])
+test_function([[6, 7, 8, 1, 2, 3, 4], 100])
+
+test_function([[], 1]) # empty array test case
+test_function([[1], 1]) # single element array test case
+
+large_array = [i for i in range(1, 1000001)] # create a large array
+
+test_function([large_array, 4000]) # test case for large array
+test_function([large_array, -1343]) # test case for element not in large array
