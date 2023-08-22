@@ -13,6 +13,7 @@ _Abbreviation:_
 _Time Complexity = TC_
 _Space Complexity = SC_
 
+
  
 **RouteTrieNode Class**
 
@@ -21,17 +22,20 @@ _Space Complexity = SC_
 - TC is O(1), constant sice it only initializes the storage dictionary for the the childredn and the handler attribute of a node
 - SC is O(n), n is the no of children nodes stored/created/found along the traversal 
 
+
 * insert()
 - check if path/child does not exist
 - create and insert new child node with path
 - TC is O(n), n is the length of the path
 - SC is O(n), n is no of children nodes created
 
+
 **RouteTrie Class**
 
 * init()
-- - TC is O(1), constant sice it only initializes the storage dictionary for the the childredn and the handler attribute of a node
+- TC is O(1), constant sice it only initializes the storage dictionary for the the childredn and the handler attribute of a node
 - SC is O(1), constst since it only initializes the predefined building node without changes in attributes.
+
 
 * insert()
 - traverse each segment of given path. check if it exists. if exits, add handler to the last node on the segment. 
@@ -39,22 +43,27 @@ _Space Complexity = SC_
 - TC is O(n) n is the number of segments on a path, with a single traversal per segment -> segments = node children
 - SC is O(n) n is the number of newly created nodes/segments
 
+
 * find()
 - traverse each path segment and add child nodes if non existent
 - return the handler for the last node if found
 - TC is O(n) n is the number of segments on a path it needs to traverse, with a single traversal per segment -> segments = node children
 - SC is O(1) as it doesn't allow additional memory to grow with the input size. It traverses the existing nodes without creating new data nor does it need more space to run even if the input size increases.
 
+
 **Router Class**
+
 * add_handler()
 - split path and add handler to RouteTrie data structure
 - TC is linear O(n) n is the number of segments on a path
 - SC is O(n) n is the number of newly created nodes/segments
 
+
 * lookup()
 - split path into segments, traverse and find requested handler. return handler if found
 - TC is linear O(n), n is length of path. the method traverses trough each node/segment.
 - SC is constant O(1), as the memory used doesn't increase with the size of the path. It traverses existing nodes without creating additional Trie nodes.
+
 
 * split_path()
 - helper method
