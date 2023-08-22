@@ -31,6 +31,7 @@ _Space Complexity = SC_
 
 * init()
 - - TC is O(1), constant sice it only initializes the storage dictionary for the the childredn and the handler attribute of a node
+- SC is O(1), constst since it only initializes the predefined building node without changes in attributes.
 
 * insert()
 - traverse each segment of given path. check if it exists. if exits, add handler to the last node on the segment. 
