@@ -15,7 +15,11 @@ _Space Complexity = SC_
 
  
 **RouteTrieNode Class**
+
+* init()
 - constructor module
+- TC is O(1), constant sice it only initializes the storage dictionary for the the childredn and the handler attribute of a node
+- SC is O(n), n is the no of children nodes stored/created/found along the traversal 
 
 * insert()
 - check if path/child does not exist
@@ -24,6 +28,10 @@ _Space Complexity = SC_
 - SC is O(n), n is no of children nodes created
 
 **RouteTrie Class**
+
+* init()
+- - TC is O(1), constant sice it only initializes the storage dictionary for the the childredn and the handler attribute of a node
+
 * insert()
 - traverse each segment of given path. check if it exists. if exits, add handler to the last node on the segment. 
 - if not, create new RouteTrieNode node and assign it a handler.
